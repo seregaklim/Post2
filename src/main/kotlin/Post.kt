@@ -28,7 +28,8 @@ data class Post(
     val isFavorite: Boolean,
     val donut: Donut,
     val postponedId: Long = 2,
-)
+    val attachments: Attachments ,
+    )
 
 fun postType() = when ("post") {
     "post" -> TODO()
@@ -58,5 +59,7 @@ object CopyHistory {
     fun add(history: CopyHistory): CopyHistory {
         copyHistory += history
         return copyHistory.last()
+
     }
 }
+

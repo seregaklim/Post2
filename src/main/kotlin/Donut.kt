@@ -1,4 +1,4 @@
-class Donut {
+ class Donut {
     var isDonut: Boolean
     var paidDuration: String
     val placeholder: Placeholder

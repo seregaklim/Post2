@@ -37,7 +37,17 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all", Placeholder),
                 postponedId = 4234,
-            )
+                attachments =  Attachments(TypePhoto(2442,24,24,24,
+                    "",35,65,56,54,),
+                    PostedPhoto(235,345,35,435,)
+                    ,TypeVideo(65,6,"","",43,Image(34,"",34,
+                        true),
+                        FirstFrame(43,"",435),56,65,65,5,"",
+                        ""),
+                    TypeAudio(33,3,"",33,"",3,43,34,354,
+                        true,false,)
+                    ,App(44,"","",""))
+                )
         )
         //создаём информацию об обновлении
 
@@ -70,7 +80,16 @@ class WallServiceTest {
             markedAsAds = true,
             isFavorite = true,
             donut = Donut(false, "Нет подписки", false, "all", Placeholder),
-            postponedId = 4234,)
+            postponedId = 4234,
+            attachments =  Attachments(TypePhoto(2442,24,24,24,
+                "",35,65,56,54,),
+                PostedPhoto(235,345,35,435,)
+                ,TypeVideo(65,6,"","",43,Image(34,"",34,true),
+                    FirstFrame(43,"",435),56,65,65,5,"",""),
+                TypeAudio(33,3,"",33,"",3,43,34,354,
+                    true,false,)
+                ,App(44,"","",""))
+            )
 
         // выполняем целевое действие
 
@@ -115,7 +134,15 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all", Placeholder),
                 postponedId = 4234,
-            )
+                attachments =  Attachments(TypePhoto(2442,24,24,24,"",35,65,
+                    56,54,),
+                    PostedPhoto(235,345,35,435,)
+                    ,TypeVideo(65,6,"","",43,Image(34,"",34,true),
+                        FirstFrame(43,"",435),56,65,65,5,"",""),
+                    TypeAudio(33,3,"",33,"",3,43,34,354,
+                        true,false,)
+                    ,App(44,"","",""))
+                )
         )
         //создаём информацию об обновлении
         val update = Post(
@@ -144,6 +171,15 @@ class WallServiceTest {
             isFavorite = true,
             donut = Donut(false, "Нет подписки", false, "all", Placeholder),
             postponedId = 4234,
+            attachments =  Attachments(TypePhoto(2442,24,24,24,"",35,
+                65,56,54,),
+                PostedPhoto(235,345,35,435,)
+                ,TypeVideo(65,6,"","",43,Image(34,"",
+                    34,true),
+                    FirstFrame(43,"",435),56,65,65,5,"",""),
+                TypeAudio(33,3,"",33,"",3,43,34,
+                    354,true,false,)
+                ,App(44,"","",""))
         )
         // выполняем целевое действие
         service.add(update)
@@ -185,7 +221,17 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all" , Placeholder),
                 postponedId = 4234,
-            )
+                attachments =  Attachments(TypePhoto(2442,24,24,24,"",
+                    35,65,56,54,),
+                    PostedPhoto(235,345,35,435,)
+                    ,TypeVideo(65,6,"","",43,Image(34,"",34,
+                        true),
+                        FirstFrame(43,"",435),56,65,65,5,"",
+                        ""),
+                    TypeAudio(33,3,"",33,"",3,43,34,
+                        354,true,false,)
+                    ,App(44,"","",""))
+                )
         )
         var original =
             Post(
@@ -217,8 +263,19 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all" , Placeholder),
                 postponedId = 4234,
-            )
-        service.add(original)
+                attachments =  Attachments(TypePhoto(2442,24,24,24,
+                    "",35,65,56,54,),
+                    PostedPhoto(235,345,35,435,)
+                    ,TypeVideo(65,6,"","",43,Image(34,
+                        "",34,true),
+                        FirstFrame(43,"",435),56,65,65,
+                        5,"",""),
+                    TypeAudio(33,3,"",33,"",3,43,
+                        34,354,true,false,)
+                    ,App(44,"","",""))
+                )
+        service.copyHistory(original)
+
         assertEquals(0, original.id)
     }
 }
