@@ -1,4 +1,4 @@
-class TypeAudio(
+class AttachmentsTypeAudio(
     var id: Int,
     var ownerId: Int,
     var title: String,
@@ -10,7 +10,7 @@ class TypeAudio(
     var date: Int,
     var noSearch: Boolean,
     var isHq: Boolean,
-)
+) : Attachments ("audio")
 
 
 

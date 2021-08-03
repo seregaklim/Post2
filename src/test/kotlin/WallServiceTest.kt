@@ -37,17 +37,8 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all", Placeholder),
                 postponedId = 4234,
-                attachments =  Attachments(TypePhoto(2442,24,24,24,
-                    "",35,65,56,54,),
-                    PostedPhoto(235,345,35,435,)
-                    ,TypeVideo(65,6,"","",43,Image(34,"",34,
-                        true),
-                        FirstFrame(43,"",435),56,65,65,5,"",
-                        ""),
-                    TypeAudio(33,3,"",33,"",3,43,34,354,
-                        true,false,)
-                    ,App(44,"","",""))
-                )
+                attachments =  emptyArray <Attachments>()
+            )
         )
         //создаём информацию об обновлении
 
@@ -81,15 +72,7 @@ class WallServiceTest {
             isFavorite = true,
             donut = Donut(false, "Нет подписки", false, "all", Placeholder),
             postponedId = 4234,
-            attachments =  Attachments(TypePhoto(2442,24,24,24,
-                "",35,65,56,54,),
-                PostedPhoto(235,345,35,435,)
-                ,TypeVideo(65,6,"","",43,Image(34,"",34,true),
-                    FirstFrame(43,"",435),56,65,65,5,"",""),
-                TypeAudio(33,3,"",33,"",3,43,34,354,
-                    true,false,)
-                ,App(44,"","",""))
-            )
+            attachments = emptyArray <Attachments>())
 
         // выполняем целевое действие
 
@@ -98,7 +81,6 @@ class WallServiceTest {
         // проверяем результат (используйте assertTrue или assertFalse)
         assertTrue(result)
     }
-
     @Test
     fun notUpdateExisting() {
         val service = WallService()
@@ -134,14 +116,7 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all", Placeholder),
                 postponedId = 4234,
-                attachments =  Attachments(TypePhoto(2442,24,24,24,"",35,65,
-                    56,54,),
-                    PostedPhoto(235,345,35,435,)
-                    ,TypeVideo(65,6,"","",43,Image(34,"",34,true),
-                        FirstFrame(43,"",435),56,65,65,5,"",""),
-                    TypeAudio(33,3,"",33,"",3,43,34,354,
-                        true,false,)
-                    ,App(44,"","",""))
+                attachments=emptyArray <Attachments>()
                 )
         )
         //создаём информацию об обновлении
@@ -171,16 +146,7 @@ class WallServiceTest {
             isFavorite = true,
             donut = Donut(false, "Нет подписки", false, "all", Placeholder),
             postponedId = 4234,
-            attachments =  Attachments(TypePhoto(2442,24,24,24,"",35,
-                65,56,54,),
-                PostedPhoto(235,345,35,435,)
-                ,TypeVideo(65,6,"","",43,Image(34,"",
-                    34,true),
-                    FirstFrame(43,"",435),56,65,65,5,"",""),
-                TypeAudio(33,3,"",33,"",3,43,34,
-                    354,true,false,)
-                ,App(44,"","",""))
-        )
+            attachments= emptyArray <Attachments>())
         // выполняем целевое действие
         service.add(update)
         val result = service.update(update)
@@ -221,17 +187,8 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all" , Placeholder),
                 postponedId = 4234,
-                attachments =  Attachments(TypePhoto(2442,24,24,24,"",
-                    35,65,56,54,),
-                    PostedPhoto(235,345,35,435,)
-                    ,TypeVideo(65,6,"","",43,Image(34,"",34,
-                        true),
-                        FirstFrame(43,"",435),56,65,65,5,"",
-                        ""),
-                    TypeAudio(33,3,"",33,"",3,43,34,
-                        354,true,false,)
-                    ,App(44,"","",""))
-                )
+                attachments= emptyArray <Attachments>())
+
         )
         var original =
             Post(
@@ -263,17 +220,8 @@ class WallServiceTest {
                 isFavorite = true,
                 donut = Donut(false, "Нет подписки", false, "all" , Placeholder),
                 postponedId = 4234,
-                attachments =  Attachments(TypePhoto(2442,24,24,24,
-                    "",35,65,56,54,),
-                    PostedPhoto(235,345,35,435,)
-                    ,TypeVideo(65,6,"","",43,Image(34,
-                        "",34,true),
-                        FirstFrame(43,"",435),56,65,65,
-                        5,"",""),
-                    TypeAudio(33,3,"",33,"",3,43,
-                        34,354,true,false,)
-                    ,App(44,"","",""))
-                )
+                attachments= emptyArray <Attachments>())
+
         service.copyHistory(original)
 
         assertEquals(0, original.id)

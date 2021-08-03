@@ -1,4 +1,4 @@
-class TypeVideo(
+class AttachmentsTypeVideo(
     var id: Long,
     var owner_id: Long,
     var title: String,
@@ -12,4 +12,4 @@ class TypeVideo(
     var comments: Long,
     var player: String,
     var platform: String,
-)
+) : Attachments("video")

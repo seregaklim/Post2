@@ -1,4 +1,4 @@
-open class  TypePhoto(
+ class  AttachmentsTypePhoto(
     var id: Int,
     var albumId: Int,
     var ownerId: Int,
@@ -7,8 +7,8 @@ open class  TypePhoto(
     var date: Int,
     var height: Int,
     var weight: Int,
-    var sizes: Int,
-    )
+    var sizes: PhotoSizes,
+    ):Attachments("photo")
 
 
 
