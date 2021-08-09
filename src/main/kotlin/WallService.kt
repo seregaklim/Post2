@@ -1,3 +1,5 @@
+
+
 class WallService {
 
     private var posts = emptyArray<Post>()
@@ -19,7 +21,15 @@ class WallService {
                     replyOwnerId = 2423421,
                     replyPostId = 234234,
                     friendsOnly = true,
-                    comments = emptyArray<Comments>(),
+//                    comments = Comments(
+//                        3, 1, 1, "Тест2",
+//                        Donut(false, "Есть подписка", false, "all", Placeholder), 324,
+//                        43, emptyArray<Attachments>(), emptyArray<ParentsStack>(), Thread(
+//                            111, emptyArray<Items>(),
+//                            true, true, true
+//                        )
+//                    ),
+           comments = emptyArray<Comments>(),
                     copyright = Copyright(1, "", "коля", ""),
                     likes = Likes(0),
                     reposts = Reposts(112),
@@ -59,36 +69,61 @@ class WallService {
 
     private var comments = emptyArray<Comments>()
 
-    fun addComments(comment: Comments): Comments {
-        comments += comment.copy(id = ++id)
-        return comments.last()
+
+
+    fun createComment(comment:  Post): Boolean {
+        for ((index, post) in posts.withIndex() )  {
+            if (post.id == comment.id) {
+
+             comments =+ comment(id= ++id )
+                comments.last()
+
+            return true
+
     }
-
-    fun createComment(updatedComment: Comments): Boolean {
-        for ((index, comment) in comments.withIndex()) {
-            if (comment.id == updatedComment.id) {
-
-                comments[index] = updatedComment.copy(
-                    date = 2021,
-                    text = "Всем привет",
-                    donut = Donut(false, "Нет подписки", false, "all", Placeholder),
-                    replyToUser = 553453,
-                    replyToComment = 1231,
-                    attachments = emptyArray(),
-                    parentsStack = emptyArray(),
-                    thread = Thread(88, emptyArray(), true, true, true),
-                )
-
-                return true
-            }
         }
-        CreateCommentException("Комментарий не может добавиться !!")
+        throw  RuntimeException("Комментарий не добавился!")
         return false
     }
+
 }
 
 
+//    fun addComments(comment: Comments): Comments {
+//        comments += comment.copy(id = ++id)
+//        return comments.last()
+//    }
 
 
 
+//
+//
+//    fun addComments(comment: Comments): Comments {
+//        comments += comment.copy(id = ++id)
+//        return comments.last()
+//    }
 
+
+//
+//fun createComment(updatedComment: Comments): Boolean {
+//    for ((index, comment) in comments.withIndex()) {
+//        if (comment.id == updatedComment.id) {
+//
+//            comments[index] = updatedComment.copy(
+//                date = 2021,
+//                text = "Всем привет",
+//                donut = Donut(false, "Нет подписки", false, "all", Placeholder),
+//                replyToUser = 553453,
+//                replyToComment = 1231,
+//                attachments = emptyArray(),
+//                parentsStack = emptyArray(),
+//                thread = java.lang.Thread(88, emptyArray(), true, true, true),
+//            )
+//
+//            return true
+//        }
+//    }
+//    CreateCommentException("Комментарий не может добавиться !!")
+//    return false
+//}
+//}

@@ -10,7 +10,7 @@ data class Post(
     val replyOwnerId: Int,
     val replyPostId: Int,
     val friendsOnly: Boolean,
-    val comments: Array <Comments> = emptyArray (),
+    val comments: Array< Comments> = emptyArray(),
     val copyright: Copyright,
     val likes: Likes,
     val reposts: Reposts,
@@ -63,3 +63,4 @@ object CopyHistory {
     }
 }
 
+//val comments: Array <Comments> = emptyArray (),
