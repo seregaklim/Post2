@@ -13,15 +13,15 @@ fun main() {
             replyOwnerId = 2423421,
             replyPostId = 234234,
             friendsOnly = true,
-//            comments = Comments(
-//                3, 1, 1, "Тест2",
-//                Donut(false, "Есть подписка", false, "all", Placeholder), 324,
-//                43, emptyArray<Attachments>(), emptyArray<ParentsStack>(), Thread(
-//                    111, emptyArray<Items>(),
-//                    true, true, true
-//                )
-//            ),
-            comments = emptyArray<Comments>(),
+            comments = Comments(
+                3, 1, 1, "Тест2",
+                Donut(false, "Есть подписка", false, "all", Placeholder), 324,
+                43, emptyArray<Attachments>(), emptyArray<ParentsStack>(), Thread(
+                    111, emptyArray<Items>(),
+                    true, true, true
+                )
+            ),
+//            comments = emptyArray<Comments>(),
             copyright = Copyright(1, "", "Frog", ""),
             likes = Likes(0),
             reposts = Reposts(112),

@@ -1,5 +1,3 @@
-
-
 class WallService {
 
     private var posts = emptyArray<Post>()
@@ -21,15 +19,15 @@ class WallService {
                     replyOwnerId = 2423421,
                     replyPostId = 234234,
                     friendsOnly = true,
-//                    comments = Comments(
-//                        3, 1, 1, "Тест2",
-//                        Donut(false, "Есть подписка", false, "all", Placeholder), 324,
-//                        43, emptyArray<Attachments>(), emptyArray<ParentsStack>(), Thread(
-//                            111, emptyArray<Items>(),
-//                            true, true, true
-//                        )
-//                    ),
-           comments = emptyArray<Comments>(),
+                    comments = Comments(
+                        3, 1, 1, "Тест2",
+                        Donut(false, "Есть подписка", false, "all", Placeholder), 324,
+                        43, emptyArray<Attachments>(), emptyArray<ParentsStack>(), Thread(
+                            111, emptyArray<Items>(),
+                            true, true, true
+                        )
+                    ),
+                    //  comments = emptyArray<Comments>(),
                     copyright = Copyright(1, "", "коля", ""),
                     likes = Likes(0),
                     reposts = Reposts(112),
@@ -69,24 +67,23 @@ class WallService {
 
     private var comments = emptyArray<Comments>()
 
-
-
-    fun createComment(comment:  Post): Boolean {
-        for ((index, post) in posts.withIndex() )  {
+    fun createComment(comment: Comments): Boolean {
+        for ((index, post) in posts.withIndex()) {
             if (post.id == comment.id) {
 
-             comments =+ comment(id= ++id )
-                comments.last()
+                comments += comment.copy(id = id++)
 
-            return true
+                return true
 
-    }
+            }
         }
-        throw  RuntimeException("Комментарий не добавился!")
+        throw  CreateCommentException ("Комментарий не добавился!")
         return false
     }
 
 }
+
+
 
 
 //    fun addComments(comment: Comments): Comments {
