@@ -1,3 +1,6 @@
+
+class CreateCommentException(message: String): RuntimeException(message)
+
 fun main() {
     var original =
         Post(
@@ -10,7 +13,7 @@ fun main() {
             replyOwnerId = 2423421,
             replyPostId = 234234,
             friendsOnly = true,
-            comments = Comments(0),
+            comments = emptyArray<Comments>(),
             copyright = Copyright(1, "", "Frog", ""),
             likes = Likes(0),
             reposts = Reposts(112),
@@ -26,7 +29,7 @@ fun main() {
             ),
             signerId = 11,
             canPin = true,
-            copyHistory = CopyHistory,
+            copyHistory = emptyArray<CopyHistory>(),
             canDelete = true,
             canEdit = true,
             isPinned = true,
@@ -34,11 +37,42 @@ fun main() {
             isFavorite = true,
             donut = Donut(false, "Нет подписки", false, "all", Placeholder),
             postponedId = 4234,
-            attachments =emptyArray <Attachments>(),
+            attachments = emptyArray<Attachments>(),
         )
-    //   WallService.add(original)
+    var originalComments = Comments(1,1,1,"",
+    Donut(false, "Нет подписки", false, "all", Placeholder),324,
+    43,emptyArray <Attachments>(),emptyArray<ParentsStack> (), Thread(
+        111, emptyArray<Items>(),
+        true, true, true
+    )
+)
     //  WallService.update(original)
-//    WallService.copyHistory(original)
+    // WallService.copyHistory(original)
+
+
+
+
 }
 
 
+
+
+
+//   val t =  (WallService.createComment(id)?.Comments ?: throw PostNotFoundException("no comments")
+
+
+//  WallService.addComments (originalComments)
+//  WallService.createComment(originalComments)
+
+
+
+//
+//var originalComments = Comments (1,1,1,"",
+//    Donut(false, "Нет подписки", false, "all", Placeholder),324,
+//    43,emptyArray <Attachments>(),emptyArray<ParentsStack> (), java.lang.Thread(
+//        111, emptyArray<Items>(),
+//        true, true, true
+//    )
+//)
+
+//

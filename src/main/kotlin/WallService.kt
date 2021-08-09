@@ -1,6 +1,6 @@
 class WallService {
 
-    var posts = emptyArray<Post>()
+    private var posts = emptyArray<Post>()
     private var id = 0
 
     fun add(post: Post): Post {
@@ -19,7 +19,7 @@ class WallService {
                     replyOwnerId = 2423421,
                     replyPostId = 234234,
                     friendsOnly = true,
-                    comments = Comments(0),
+                    comments = emptyArray<Comments>(),
                     copyright = Copyright(1, "", "коля", ""),
                     likes = Likes(0),
                     reposts = Reposts(112),
@@ -34,7 +34,7 @@ class WallService {
                     ),
                     signerId = 11,
                     canPin = true,
-                    copyHistory = CopyHistory,
+                    copyHistory = emptyArray<CopyHistory>(),
                     canDelete = true,
                     canEdit = true,
                     isPinned = true,
@@ -42,8 +42,8 @@ class WallService {
                     isFavorite = true,
                     donut = Donut(false, "Нет подписки", false, "all", Placeholder),
                     postponedId = 4234,
-                    attachments= emptyArray <Attachments>())
-
+                    attachments = emptyArray<Attachments>()
+                )
 
                 return true
             }
@@ -54,7 +54,41 @@ class WallService {
     fun copyHistory(post: Post): Post {
         val copyHistory = post.copyHistory ?: post
         return post
+
     }
 
+    private var comments = emptyArray<Comments>()
 
+    fun addComments(comment: Comments): Comments {
+        comments += comment.copy(id = ++id)
+        return comments.last()
+    }
+
+    fun createComment(updatedComment: Comments): Boolean {
+        for ((index, comment) in comments.withIndex()) {
+            if (comment.id == updatedComment.id) {
+
+                comments[index] = updatedComment.copy(
+                    date = 2021,
+                    text = "Всем привет",
+                    donut = Donut(false, "Нет подписки", false, "all", Placeholder),
+                    replyToUser = 553453,
+                    replyToComment = 1231,
+                    attachments = emptyArray(),
+                    parentsStack = emptyArray(),
+                    thread = Thread(88, emptyArray(), true, true, true),
+                )
+
+                return true
+            }
+        }
+        CreateCommentException("Комментарий не может добавиться !!")
+        return false
+    }
 }
+
+
+
+
+
+
