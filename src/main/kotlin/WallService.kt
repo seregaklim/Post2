@@ -67,7 +67,7 @@ class WallService {
 
     private var comments = emptyArray<Comments>()
 
-    fun createComment(comment: Comments): Boolean {
+    fun createComment(comment: Comments) :Boolean {
         for ((index, post) in posts.withIndex()) {
             if (post.id == comment.id) {
 
@@ -77,9 +77,11 @@ class WallService {
 
             }
         }
-        throw  CreateCommentException ("Комментарий не добавился!")
+        throw PostNotFoundException  ("Комментарий не добавился!")
         return false
     }
+
+
 
 }
 

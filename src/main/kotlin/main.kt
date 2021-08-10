@@ -1,5 +1,5 @@
 
-class CreateCommentException(message: String): RuntimeException(message)
+class PostNotFoundException (message: String = "Комментарий не добавился!"): RuntimeException(message)
 
 fun main() {
     var original =
