@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WallServiceTest" tests="4" skipped="0" failures="1" errors="0" timestamp="2021-08-10T18:54:14" hostname="DESKTOP-9J2UKKD" time="0.925">
+<testsuite name="WallServiceTest" tests="4" skipped="0" failures="1" errors="0" timestamp="2021-08-17T11:14:13" hostname="DESKTOP-9J2UKKD" time="0.522">
   <properties/>
-  <testcase name="notUpdateExisting" classname="WallServiceTest" time="0.835"/>
-  <testcase name="updateExisting" classname="WallServiceTest" time="0.0"/>
-  <testcase name="createComment" classname="WallServiceTest" time="0.064">
-    <failure message="PostNotFoundException: Комментарий не добавился!" type="PostNotFoundException">PostNotFoundException: Комментарий не добавился!
-	at WallService.createComment(WallService.kt:80)
-	at WallServiceTest.createComment(WallServiceTest.kt:314)
+  <testcase name="notUpdateExisting" classname="WallServiceTest" time="0.493"/>
+  <testcase name="updateExisting" classname="WallServiceTest" time="0.001"/>
+  <testcase name="createComment" classname="WallServiceTest" time="0.024">
+    <failure message="PostNotFoundException: Комментарий не добавлен!" type="PostNotFoundException">PostNotFoundException: Комментарий не добавлен!
+	at WallService.createComment(WallService.kt:78)
+	at WallServiceTest.createComment(WallServiceTest.kt:313)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,7 +59,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:831)
 </failure>
   </testcase>
-  <testcase name="addExisting" classname="WallServiceTest" time="0.022"/>
+  <testcase name="addExisting" classname="WallServiceTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

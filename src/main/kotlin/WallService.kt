@@ -56,34 +56,50 @@ class WallService {
                 return true
             }
         }
+
         return false
     }
 
     fun copyHistory(post: Post): Post {
         val copyHistory = post.copyHistory ?: post
-        return post
+        return  post
 
     }
 
     private var comments = emptyArray<Comments>()
 
-    fun createComment(comment: Comments) :Boolean {
+    fun createComment(comment: Comments):Boolean {
         for ((index, post) in posts.withIndex()) {
-            if (post.id == comment.id) {
-
-                comments += comment.copy(id = id++)
-
+            if (post.id == comment.postId) {
+                comments += comment.copy(postId = id++)
                 return true
-
             }
         }
-        throw PostNotFoundException  ("Комментарий не добавился!")
+        throw PostNotFoundException  ("Комментарий не добавлен!")
         return false
     }
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
