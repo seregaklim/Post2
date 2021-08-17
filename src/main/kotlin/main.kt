@@ -1,5 +1,4 @@
-
-class PostNotFoundException (message: String = "Комментарий не добавился!"): RuntimeException(message)
+class PostNotFoundException(message: String = "Комментарий не добавился!") : RuntimeException(message)
 
 fun main() {
     var original =
@@ -21,7 +20,7 @@ fun main() {
                     true, true, true
                 )
             ),
-//            comments = emptyArray<Comments>(),
+
             copyright = Copyright(1, "", "Frog", ""),
             likes = Likes(0),
             reposts = Reposts(112),
@@ -47,13 +46,14 @@ fun main() {
             postponedId = 4234,
             attachments = emptyArray<Attachments>(),
         )
-    var originalComments = Comments(1,1,1,"",
-    Donut(false, "Нет подписки", false, "all", Placeholder),324,
-    43,emptyArray <Attachments>(),emptyArray<ParentsStack> (), Thread(
-        111, emptyArray<Items>(),
-        true, true, true
+    var originalComments = Comments(
+        1, 1, 1, "",
+        Donut(false, "Нет подписки", false, "all", Placeholder), 324,
+        43, emptyArray<Attachments>(), emptyArray<ParentsStack>(), Thread(
+            111, emptyArray<Items>(),
+            true, true, true
+        )
     )
-)
     //  WallService.update(original)
     // WallService.copyHistory(original)
 

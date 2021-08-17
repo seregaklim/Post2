@@ -62,83 +62,28 @@ class WallService {
 
     fun copyHistory(post: Post): Post {
         val copyHistory = post.copyHistory ?: post
-        return  post
+        return post
 
     }
 
     private var comments = emptyArray<Comments>()
 
-    fun createComment(comment: Comments):Boolean {
+
+    fun createComment(comment: Comments): Boolean {
+
         for ((index, post) in posts.withIndex()) {
             if (post.id == comment.postId) {
                 comments += comment.copy(postId = id++)
+
                 return true
             }
         }
-        throw PostNotFoundException  ("Комментарий не добавлен!")
+        throw PostNotFoundException("Комментарий не добавлен!")
         return false
     }
+
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    fun addComments(comment: Comments): Comments {
-//        comments += comment.copy(id = ++id)
-//        return comments.last()
-//    }
-
-
-
-//
-//
-//    fun addComments(comment: Comments): Comments {
-//        comments += comment.copy(id = ++id)
-//        return comments.last()
-//    }
-
-
-//
-//fun createComment(updatedComment: Comments): Boolean {
-//    for ((index, comment) in comments.withIndex()) {
-//        if (comment.id == updatedComment.id) {
-//
-//            comments[index] = updatedComment.copy(
-//                date = 2021,
-//                text = "Всем привет",
-//                donut = Donut(false, "Нет подписки", false, "all", Placeholder),
-//                replyToUser = 553453,
-//                replyToComment = 1231,
-//                attachments = emptyArray(),
-//                parentsStack = emptyArray(),
-//                thread = java.lang.Thread(88, emptyArray(), true, true, true),
-//            )
-//
-//            return true
-//        }
-//    }
-//    CreateCommentException("Комментарий не может добавиться !!")
-//    return false
-//}
-//}

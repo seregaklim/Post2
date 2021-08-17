@@ -1,5 +1,6 @@
 data class Comments(
     var postId: Int =0,
+
     var fromId: Long,
     var date: Long,
     var text: String,

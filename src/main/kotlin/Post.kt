@@ -19,7 +19,7 @@ data class Post(
     val postType: String = postType(),
     val postSource: PostSource,
     val geo: Geo,
-    val signerId: Long = 11,
+    val signerId: Long ,
     val copyHistory: Array< CopyHistory>? = emptyArray(),
     val canPin: Boolean,
     val canDelete: Boolean,
@@ -28,7 +28,7 @@ data class Post(
     val markedAsAds: Boolean,
     val isFavorite: Boolean,
     val donut: Donut,
-    val postponedId: Long = 2,
+    val postponedId: Long ,
     val attachments :Array< Attachments> = emptyArray(),
     )
 
